@@ -2,11 +2,10 @@
 # coding: utf-8
 
 # Name: Muhammad Ali
-
 # ID: 21069608
+# assignment 01, Applied data science 1
 
 # # Loading Modules & Data
-
 
 # Importing related modules
 import numpy as np
