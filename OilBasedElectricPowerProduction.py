@@ -63,9 +63,9 @@ dn.reset_index(drop=True, inplace=True)
 unwanted_cols = ["Country Code", "Indicator Name", "Indicator Code"]
 useless_cols=["Country Code", "Indicator Name", "Indicator Code"]
 df_oil = df.drop(unwanted_cols, axis=1).set_index("Country Name").iloc[:, :-2]
-df_ncl = dn.drop(useless_cols, axis=1).set_index("Country Name").iloc[:, :-2]
+dn_ncl = dn.drop(useless_cols, axis=1).set_index("Country Name").iloc[:, :-2]
 df_oil.iloc[:, 20:55].mean().plot(kind="line", figsize=(15, 6),label="Oil Based")
-df_ncl.iloc[:, 20:55].mean().plot(kind="line", figsize=(15, 6), label="Nuclear Based")
+dn_ncl.iloc[:, 20:55].mean().plot(kind="line", figsize=(15, 6), label="Nuclear Based")
 plt.title("Percentage Electricty Production on Oil vs Nuclear resources in the whole World", fontsize=18)
 plt.xlabel("Year", fontsize=15)
 plt.ylabel("Percentage ", fontsize=15)
