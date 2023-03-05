@@ -2,12 +2,10 @@
 # coding: utf-8
 
 # Name: Muhammad Ali
-# 
+
 # ID: 21069608
 
 # # Loading Modules & Data
-
-# In[1]:
 
 
 # Importing related modules
@@ -24,15 +22,9 @@ dn.head()
 
 # # Preparing Data for information
 
-# In[ ]:
-
-
 # FIlling missing values
 df.fillna(0, inplace=True)
 dn.fillna(0, inplace=True)
-
-# In[2]:
-
 
 # Extracting Valid countries data
 import pycountry
@@ -41,8 +33,6 @@ country_names = [country.name for country in countries]
 
 df = df[df["Country Name"].isin(country_names)]
 dn = dn[dn["Country Name"].isin(country_names)]
-
-# In[3]:
 
 
 # Dropping all related world records
@@ -57,9 +47,8 @@ dn.reset_index(drop=True, inplace=True)
 
 #  1. line Graph of Electric power production on Oil vs Nuclear energy
 
-# In[4]:
 
-
+# sorting, manipulating and labeling data
 unwanted_cols = ["Country Code", "Indicator Name", "Indicator Code"]
 useless_cols=["Country Code", "Indicator Name", "Indicator Code"]
 df_oil = df.drop(unwanted_cols, axis=1).set_index("Country Name").iloc[:, :-2]
@@ -71,9 +60,6 @@ plt.xlabel("Year", fontsize=15)
 plt.ylabel("Percentage ", fontsize=15)
 plt.legend()
 plt.show()
-
-# In[5]:
-    
     
 #   2. Coding for Bar Graph
 
