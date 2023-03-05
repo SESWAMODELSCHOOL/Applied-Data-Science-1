@@ -36,6 +36,7 @@ dn = dn[dn["Country Name"].isin(country_names)]
 
 
 # Dropping all related world records
+
 index = df[df["Country Name"] == "World"].index
 index = dn[dn["Country Name"] == "World"].index
 df.drop(index, axis=0, inplace=True)
@@ -46,7 +47,6 @@ dn.reset_index(drop=True, inplace=True)
 # # Visualizations of data in different forms
 
 #  1. line Graph of Electric power production on Oil vs Nuclear energy
-
 
 # sorting, manipulating and labeling data
 unwanted_cols = ["Country Code", "Indicator Name", "Indicator Code"]
@@ -63,6 +63,7 @@ plt.show()
     
 #   2. Coding for Bar Graph
 
+# setting range and sorting data for comparision
 
 temp = df_oil.iloc[:, 20:].mean(axis=1).sort_values(ascending=False)
 nuc = dn_ncl.iloc[:, 20:].mean(axis=1).sort_values(ascending=False)
@@ -84,9 +85,9 @@ plt.ylabel("%age Electric Energy Nuclear based")
 
 plt.show()
 
-# In[42]:
-
 # 3. Coding for Pie Graphs
+
+# setting parameters and fix limits for data ploting
 
 temp = df_oil.mean()
 nl = dn_ncl.mean()
