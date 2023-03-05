@@ -72,3 +72,28 @@ plt.ylabel("Percentage ", fontsize=15)
 plt.legend()
 plt.show()
 
+# In[5]:
+    
+    
+#   2. Coding for Bar Graph
+
+
+temp = df_oil.iloc[:, 20:].mean(axis=1).sort_values(ascending=False)
+nuc = dn_ncl.iloc[:, 20:].mean(axis=1).sort_values(ascending=False)
+temp = temp[temp > 0][0:10]
+nuc = nuc[nuc > 0][0:10]
+plt.figure(figsize=(15, 12))
+plt.subplot(2,2 ,1)
+ol=sns.barplot(temp.index, temp.values)
+plt.title("Top 10 Countries with Highest Oil-based electricty production", fontsize=12)
+plt.xticks(rotation= 70)
+plt.xlabel(" Country Name ")
+plt.ylabel("%age Electic Energy Oil based")
+plt.subplot(2,2 ,2)
+nl=sns.barplot(nuc.index, nuc.values)
+plt.title("Top 10 Countries with Highest Nuclear based Electricity Production", fontsize=12)
+plt.xticks(rotation=70)
+plt.xlabel(" Country Name ")
+plt.ylabel("%age Electric Energy Nuclear based")
+
+plt.show()
