@@ -97,3 +97,21 @@ plt.xlabel(" Country Name ")
 plt.ylabel("%age Electric Energy Nuclear based")
 
 plt.show()
+
+# In[42]:
+
+# 3. Coding for Pie Graphs
+
+temp = df_oil.mean()
+nl = dn_ncl.mean()
+temp = temp[temp>0][20:60]
+nl = nl[nl>0][20:60]
+plt.figure(figsize=(15,15))
+plt.subplot(2,2 ,1)
+plt.pie(temp.values, labels=temp.index)
+plt.title("Electricity Production Per Year From Nuclear Energy 1980-2015")
+plt.subplot(2,2 ,2)
+plt.pie(nl.values, labels=nl.index)
+plt.title("Electricity Production Per Year From Oil Sources 1980-2015")
+plt.show()
+
